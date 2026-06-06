@@ -231,4 +231,24 @@ document.addEventListener('DOMContentLoaded', () => {
             navbar.classList.remove('scrolled');
         }
     });
+
+    // Contact form submit
+    const contactForm = document.getElementById('contact-form');
+    const formSuccess = document.getElementById('form-success');
+    if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const btn = contactForm.querySelector('.form-submit');
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+            // Simulate network delay then show success
+            setTimeout(() => {
+                contactForm.reset();
+                btn.textContent = 'Send Message';
+                btn.disabled = false;
+                formSuccess.style.display = 'block';
+                setTimeout(() => { formSuccess.style.display = 'none'; }, 5000);
+            }, 1000);
+        });
+    }
 });
