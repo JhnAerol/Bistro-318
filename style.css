@@ -28,7 +28,6 @@ body {
     color: var(--text-primary);
     background-color: var(--bg-primary);
     background-image: url("https://www.transparenttextures.com/patterns/felt.png");
-    /* Subtle texture */
     overflow-x: hidden;
     -webkit-font-smoothing: antialiased;
 }
